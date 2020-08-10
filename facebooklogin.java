@@ -1,5 +1,3 @@
-//This is the easiest Facebook automation code in selenium using java where you read the password from a text file saved in any location in your computer system(In this case, it is saved in C:\\selenium)
-
 package selenium;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
