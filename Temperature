@@ -1,0 +1,123 @@
+#include <stdio.h>
+#include<string.h>
+
+int main()
+{
+    struct weather{
+    float temperature;
+    char city_name[30];
+    };
+
+    struct weather e1={10.5, "Ranchi"};
+    struct weather e2, e3, e4, e5;
+    e2.temperature = 44.0;
+    strcpy(e2.city_name, "Bhagalpur");
+    e3.temperature = 37.7;
+    strcpy(e3.city_name, "Jamshedpur");
+    e4.temperature = 17.3;
+    strcpy(e4.city_name, "Sahibganj");
+     e5.temperature = 27.0;
+     strcpy(e5.city_name, "Torpa");
+     printf("Weather entry log: First\n");
+     printf("Temperature: %f\n", e1.temperature);
+     printf("city_name: %s\n", e1.city_name);
+     printf("Weather entry log: Second\n");
+     printf("Temperature: %f\n", e2.temperature);
+     printf("city_name: %s\n", e2.city_name);
+     printf("Weather entry log: Third\n");
+     printf("Temperature: %f\n", e3.temperature);
+     printf("city_name: %s\n", e3.city_name);
+     printf("Weather entry log: Fourth\n");
+     printf("Temperature: %f\n", e4.temperature);
+     printf("city_name: %s\n", e4.city_name);
+     printf("Weather entry log: Fifth\n");
+     printf("Temperature: %f\n", e5.temperature);
+     printf("city_name: %s\n", e5.city_name);
+     printf("\n");
+     printf("The results are as follows:\n");
+     //For city 1//
+     if(e1.temperature<27.0)
+     {
+        printf("city_name: %s is a cold city\n", e1.city_name);
+         
+     }
+     else if(e1.temperature==27.0)
+     {
+        printf("city_name: %s is a city with moderate temparature\n", e1.city_name);
+         
+     }
+     else
+     {
+        printf("city_name: %s is a hot city\n", e1.city_name);
+         
+     }
+     
+     //For city 2//
+     if(e2.temperature<27.0)
+     {
+        printf("city_name: %s is a cold city\n", e2.city_name);
+         
+     }
+     else if(e2.temperature==27.0)
+     {
+        printf("city_name: %s is a city with moderate temparature\n", e2.city_name);
+         
+     }
+     else
+     {
+        printf("city_name: %s is a hot city\n", e2.city_name);
+         
+     }
+     
+     //For city 3//
+     if(e3.temperature<27.0)
+     {
+        printf("city_name: %s is a cold city\n", e3.city_name);
+         
+     }
+     else if(e3.temperature==27.0)
+     {
+        printf("city_name: %s is a city with moderate temparature\n", e3.city_name);
+         
+     }
+     else
+     {
+        printf("city_name: %s is a hot city\n", e3.city_name);
+         
+     }
+     
+     //For city 4//
+     if(e4.temperature<27.0)
+     {
+        printf("city_name: %s is a cold city\n", e4.city_name);
+         
+     }
+     else if(e4.temperature==27.0)
+     {
+        printf("city_name: %s is a city with moderate temparature\n", e4.city_name);
+         
+     }
+     else
+     {
+        printf("city_name: %s is a hot city\n", e4.city_name);
+         
+     }
+     
+     //For city 5//
+     if(e5.temperature<27.0)
+     {
+        printf("city_name: %s is a cold city\n", e5.city_name);
+         
+     }
+     else if(e5.temperature==27.0)
+     {
+        printf("city_name: %s is a city with moderate temparature\n", e5.city_name);
+         
+     }
+     else
+     {
+        printf("city_name: %s is a hot city\n", e5.city_name);
+         
+     }
+    return 0;
+}
