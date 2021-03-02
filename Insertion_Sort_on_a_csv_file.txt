@@ -1,0 +1,93 @@
+package insertionsortcsv;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class insertionsortcsv {
+
+static int count=0;
+    static void insertion(Row arr[])
+    {
+int n = arr.length;  
+        
+        for (int i = 1; i < n; i++)
+        {
+            Row key = arr[i];  
+            int j = i-1;  
+            
+            while ( (j > -1) && arr[j].compareTo(key)>0)
+            {  
+            //System.out.println("Comparing "+ key  + " and " + arr [j]); 
+                arr [j+1] = arr [j];  
+                j--;  
+                count++;
+            }  
+            arr[j+1] = key; 
+            //System.out.println("Swapping Elements: New Array After Swap");
+           // printArray(arr);
+            }  
+    }
+    
+
+public static class Row implements Comparable<Row> {
+//other properties
+public double balance;
+public int duration;
+
+public Row(double balance, int duration) {
+	this.balance=balance;
+	this.duration=duration;
+}
+
+//comparator function
+public int compareTo(Row rhs){
+ if(this.balance < rhs.balance) {
+return -1;
+}
+if(this.balance > rhs.balance) {
+return 1;
+}
+if(this.balance == rhs.balance) {
+return 0;
+}
+return duration;
+}
+}
+
+    public static void main(String[] args) throws NumberFormatException, IOException {
+    BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Utkarsh Jayaswal\\Dropbox\\My PC (CLASSIFIED)\\Downloads\\bank.csv"));
+
+// creating a global container for all rows
+List<Row> rows = new ArrayList<Row>();
+
+    try {
+     String line = br.readLine();
+ 
+     while (line != null) {
+String[] values = line.split(",");
+try {
+double balance = Double.parseDouble(values[6]);
+int duration = Integer.parseInt(values[12]);
+Row row = new Row(balance, duration);
+//reading one row and adding it to the global container
+rows.add(row);
+}
+catch(Exception e){}
+finally {
+	line = br.readLine();
+}
+     }
+   
+    } finally {
+            br.close();
+    Row[] inputArray = new Row[rows.size()];
+    						inputArray = rows.toArray(inputArray);
+long startTime = System.nanoTime();
+          insertion(inputArray);
+long elapsedTime = System.nanoTime() - startTime;
+System.out.println("Comparion = "+count);
+System.out.println("Time"+"= " + elapsedTime/1000000.0f+" milliseconds");
+        }
+    }
+}
